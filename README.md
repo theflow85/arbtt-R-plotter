@@ -10,6 +10,6 @@ Hi. It works like this:
 - Start RStudio
 - Load the R-file
 - Run R-Script. 
-- For the next time, comment out the first line with #
+- After running the script for the first time, comment out the first line of code with # to not repeatedly install the necessary R-packages.
 
 The result should be a plot with all the tasks you used on the present day. You can choose the date: Type for example "show("2020-12-25")" to display the plot for the 25th of December 2020.

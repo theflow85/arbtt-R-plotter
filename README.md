@@ -1,5 +1,5 @@
 # arbtt-R-plotter
-A simple R-script to plot tasks captured by arbtt.
+A simple R-script to plot the tasks that were captured by arbtt. I wrote the script for an easier documentation of my working hours.
 
 Hi. It works like this:
 

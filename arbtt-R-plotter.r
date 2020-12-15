@@ -1,10 +1,11 @@
-setwd ("/home/fsklug/R/data/")
-library("libraries")
+# Install and load libraries. You can add "#" before "install.packages" after the first run. 
+install.packages(c("data.table", "tidyverse", "lubridate"))
 library(data.table)
 library(tidyverse)
 library(lubridate)
 
 
+# Grab minute-by-minute data from arbtt and wrangle into a usable format
 var <- as_tibble(system("arbtt-stats --for-each minute --output-format csv", intern = TRUE)) %>%
   separate(value, c("Date_Time", "Tag", "Duration", "Percentage"), sep = ",") %>%
   slice(-1) %>% 
@@ -14,6 +15,7 @@ var <- as_tibble(system("arbtt-stats --for-each minute --output-format csv", int
   mutate(Coarse = "Any") %>%
   gather(type, Passtime, -Date_Time)
 
+# Create function to show the plot
 show <- function(ch_day = Sys.Date()) {
   chosen_day <- ymd(ch_day, tz="CET")
   var %>% filter(Date_Time >= chosen_day & Date_Time <= chosen_day + ddays(1)) %>%
@@ -25,4 +27,5 @@ show <- function(ch_day = Sys.Date()) {
     labs(title = as.character(ch_day), x = "Time")
   }
 
+# Run the plot
 show()

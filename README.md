@@ -4,7 +4,7 @@ A simple R-script to plot tasks captured by arbtt.
 Hi. It works like this:
 
 - Install arbtt by running "sudo apt-get install arbtt" in terminal
-- Copy the "categorize.cfg" from my repo to ~/.arbtt/categorize.cfg. It sets up a minimal configuration. 
+- Copy the "categorize.cfg" from my repo to ~/.arbtt/categorize.cfg. It sets up a minimal configuration for arbtt.
 - Set up arbtt-capture to automatically run on startup. "cp /usr/share/doc/arbtt/examples/arbtt-capture.desktop ~/.config/autostart/", or manually add "& arbtt-capture" as startup program.
 - Copy the R-file wherever you want to put it. 
 - Start RStudio
